@@ -1,0 +1,13 @@
+<div [style.backgroundColor]="color">
+  Bonjour
+</div>
+
+<input
+  type="text"
+  class="form-control"
+  #colorInput
+  (change)="changeColor(colorInput)" >
+
+<button (click)="resetColor()" class="btn btn-danger">
+  Reset
+</button>
