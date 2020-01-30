@@ -7,8 +7,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class FilsComponent implements OnInit {
   @Input() couleurPere;
+  myFavoriteColor = 'red';
   // créer event
   @Output() sendData = new EventEmitter();
+  @Output() sendFavoriteColor = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +21,9 @@ export class FilsComponent implements OnInit {
     this.sendData.emit(
       {name : 'sellaouti', age: 37}
     );
+  }
+  sendMyColor() {
+    this.sendFavoriteColor.emit(this.myFavoriteColor);
   }
 
 }

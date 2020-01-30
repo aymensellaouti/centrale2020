@@ -11,6 +11,7 @@ import { TwoWayComponent } from './two-way/two-way.component';
 import { CardComponent } from './card/card.component';
 import { FilsComponent } from './fils/fils.component';
 import { PereComponent } from './pere/pere.component';
+import { ListComponent } from './cv/list/list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PereComponent } from './pere/pere.component';
     TwoWayComponent,
     CardComponent,
     FilsComponent,
-    PereComponent
+    PereComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

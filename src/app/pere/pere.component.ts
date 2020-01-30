@@ -15,4 +15,8 @@ export class PereComponent implements OnInit {
   processSonMessage(data) {
     alert(`je suis ${data.name} et j'ai ${data.age}`);
   }
+
+  getSonFavoriteColor(color: string) {
+    this.color = color;
+  }
 }
