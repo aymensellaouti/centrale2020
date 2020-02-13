@@ -17,10 +17,13 @@ export class ListComponent implements OnInit {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 37,
         123456, 'teacher',
-        'rotating_card_profile2.png'),
-      new Personne(1, 'sellaouti', 'aymen',
+        'as.jpg'),
+      new Personne(2, 'sellaouti', 'aymen',
         37, 123456, 'teacher',
-        'rotating_card_profile3.png')
+        ''),
+      new Personne(3, 'sellaouti', 'aymen',
+        37, 123456, 'teacher',
+        '      '),
     ];
   }
   forwardPersonne(personne: Personne) {

@@ -7,6 +7,7 @@ import {Personne} from '../../Models/personne';
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent implements OnInit {
+  dateDuJour = new Date();
   selectedPersonne: Personne;
   constructor() { }
 

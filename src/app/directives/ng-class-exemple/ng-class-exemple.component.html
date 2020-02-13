@@ -1,5 +1,5 @@
 <p
-  (click)="eteindre()"
+  *ngIf="isEteinte"
   [ngClass]="{
     'lampe': isEteinte,
     'class1': actualClass == 'class1',
@@ -7,7 +7,9 @@
     'class3': actualClass == 'class3'
   }"
 >ng-class-exemple works!</p>
-
+<button
+  (click)="eteindre()"
+>show/hide</button>
 <input type="text" appRainbow>
 
 <button class="btn btn-primary" (click)="changeClass('class1')">Theme 1 </button>
