@@ -1,12 +1,28 @@
 <p
   (click)="eteindre()"
   [ngClass]="{
+    'lampe': isEteinte,
     'class1': actualClass == 'class1',
     'class2': actualClass == 'class2',
     'class3': actualClass == 'class3'
   }"
 >ng-class-exemple works!</p>
 
+<input type="text" appRainbow>
+
 <button class="btn btn-primary" (click)="changeClass('class1')">Theme 1 </button>
 <button class="btn btn-warning" (click)="changeClass('class2')">Theme 2 </button>
 <button class="btn btn-danger" (click)="changeClass('class3')">Theme 3 </button>
+
+
+<div appHighlight >
+  Bonjour SI2
+</div>
+
+<div appHighlight [colorIn]="'white'" [colorOut]="'red'">
+  Bonjour SI2
+</div>
+
+<div appHighlight [colorIn]="'green'" [colorOut]="'blue'">
+  Bonjour SI2
+</div>
