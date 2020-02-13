@@ -1,0 +1,18 @@
+.lampe {
+  background-color: yellow;
+}
+.class1 {
+  color: red;
+  font-size: 24px;
+  font-family: Garamond;
+}
+.class2 {
+  color: green;
+  font-size: 44px;
+  font-family: "Times New Roman";
+}
+.class3 {
+  color: blue;
+  font-size: 66px;
+  font-family: "Helvetica Nueue", Arial, Verdana, sans-serif;
+}
