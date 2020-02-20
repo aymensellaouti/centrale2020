@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Personne} from '../../Models/personne';
 import {LoggerService} from '../../services/logger.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cv',
@@ -11,7 +12,8 @@ export class CvComponent implements OnInit {
   dateDuJour = new Date();
   selectedPersonne: Personne;
   constructor(
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -20,5 +22,8 @@ export class CvComponent implements OnInit {
 
   onSelectPersonne(personne: Personne) {
     this.selectedPersonne = personne;
+  }
+  goToTodo() {
+    this.router.navigate(['todo']);
   }
 }
