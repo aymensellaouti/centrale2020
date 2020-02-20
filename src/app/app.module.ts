@@ -23,6 +23,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
     RainbowDirective,
     DefaultImagePipe,
     TodoComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
