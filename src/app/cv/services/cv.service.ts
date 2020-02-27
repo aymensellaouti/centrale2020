@@ -6,7 +6,8 @@ import {Personne} from '../../Models/personne';
 })
 export class CvService {
   personnes: Personne[];
-  constructor() {
+  constructor(
+  ) {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 37,
         123456, 'teacher',
@@ -21,5 +22,17 @@ export class CvService {
   }
   getPersonnes(): Personne[] {
     return this.personnes;
+  }
+  getPersonneById(id): Personne {
+    return this.personnes.find((personne) => personne.id === +id);
+  }
+  deletePersonne(personne: Personne) {
+    const index = this.personnes.indexOf(personne);
+    if (index === -1) {
+      return 0;
+    } else {
+      this.personnes.splice(index, 1);
+      return 1;
+    }
   }
 }

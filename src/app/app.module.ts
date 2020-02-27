@@ -26,6 +26,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
 import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
+import { FrontComponent } from './front/front.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.co
     EmbaucheComponent,
     HeaderComponent,
     RouterSimulatorComponent,
-    DetailPersonneComponent
+    DetailPersonneComponent,
+    FrontComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
