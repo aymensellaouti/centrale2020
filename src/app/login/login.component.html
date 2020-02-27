@@ -1,0 +1,25 @@
+<form #loginForm="ngForm">
+  Email :
+  <input
+    ngModel
+    name="email"
+    type="text"
+    email
+    required
+    class="form-control">
+
+  Password :
+  <input
+    type="password"
+    ngModel
+    required
+    minlength="4"
+    name="password"
+    class="form-control"
+  >
+  <button
+    (click)="login(loginForm)"
+    class="btn btn-primary">
+    Login
+  </button>
+</form>

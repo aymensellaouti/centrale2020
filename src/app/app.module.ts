@@ -28,6 +28,8 @@ import { RouterSimulatorComponent } from './router-simulator/router-simulator.co
 import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
 import { FrontComponent } from './front/front.component';
 import { AdminComponent } from './admin/admin.component';
+import { NF404Component } from './nf404/nf404.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { AdminComponent } from './admin/admin.component';
     RouterSimulatorComponent,
     DetailPersonneComponent,
     FrontComponent,
-    AdminComponent
+    AdminComponent,
+    NF404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

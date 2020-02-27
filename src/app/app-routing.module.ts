@@ -5,8 +5,9 @@ import {TodoComponent} from './todo/todo.component';
 import {ColorComponent} from './color/color.component';
 import {NgClassExempleComponent} from './directives/ng-class-exemple/ng-class-exemple.component';
 import {DetailPersonneComponent} from './cv/detail-personne/detail-personne.component';
-import {AdminComponent} from './admin/admin.component';
-import {FrontComponent} from './front/front.component';
+import {TwoWayComponent} from './two-way/two-way.component';
+import {NF404Component} from './nf404/nf404.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -17,14 +18,10 @@ const routes: Routes = [
     ]},
   {path: 'cv', component: CvComponent},
   {path: 'cv/:id', component: DetailPersonneComponent},
-  {path: 'admin', component: AdminComponent, children: [
-      {path: 'todo', component: TodoComponent}
-    ]
-  },
-  {path: 'front', component: FrontComponent, children: [
-      {path: 'color/:couleur', component: ColorComponent},
-    ]
-  }
+  {path: 'login', component: LoginComponent},
+  {path: 'todo', component: TodoComponent},
+  {path: 'color/:couleur', component: ColorComponent},
+  {path: '**', component: NF404Component},
 ];
 
 @NgModule({
