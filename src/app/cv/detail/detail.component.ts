@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Personne} from '../../Models/personne';
 import {EmbaucheService} from '../services/embauche.service';
 import {Router} from '@angular/router';
+import {CvService} from '../services/cv.service';
 
 @Component({
   selector: 'app-detail',
@@ -9,13 +10,20 @@ import {Router} from '@angular/router';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  @Input() personne: Personne;
+  personne: Personne;
   constructor(
     private embaucheService: EmbaucheService,
-    private router: Router
+    private router: Router,
+    private cvService: CvService
   ) { }
 
   ngOnInit() {
+    this.cvService.personneClickSubject.subscribe(
+      (personne) => {
+        console.log('l observable a emis une nouvelle personne je l affiche', personne);
+        this.personne = personne;
+      }
+    );
   }
 
   embaucher() {

@@ -1,12 +1,17 @@
 <div class="alert alert-primary">
   Bonjour Nous sommes le {{dateDuJour|date:"fullDate"|uppercase}}
 </div>
+<div class="alert alert-dark">
+Nombre de click :  {{nbreDeClick}}<br>
+{{message}}
+
+</div>
 <div class="row">
   <div class="col-md-6">
-    <app-list (selectPersonne)="onSelectPersonne($event)"></app-list>
+    <app-list></app-list>
   </div>
   <div class="col-md-6">
-    <app-detail [personne]="selectedPersonne"></app-detail>
+    <app-detail></app-detail>
   </div>
 </div>
 <div class="row">

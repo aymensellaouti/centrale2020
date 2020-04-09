@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import {Personne} from '../../Models/personne';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
   personnes: Personne[];
+  personneClickSubject = new Subject<Personne>();
   constructor(
   ) {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 37,
         123456, 'teacher',
         'as.jpg'),
-      new Personne(2, 'sellaouti', 'aymen',
+      new Personne(2, 'Zidan', 'zineddine',
         37, 123456, 'teacher',
         ''),
-      new Personne(3, 'sellaouti', 'aymen',
+      new Personne(3, 'Centrale', 'Angular',
         37, 123456, 'teacher',
         '      '),
     ];
@@ -34,5 +36,9 @@ export class CvService {
       this.personnes.splice(index, 1);
       return 1;
     }
+  }
+  selectPersonne(peronne: Personne) {
+    console.log('je vais dispatcher une personne :', peronne);
+    this.personneClickSubject.next(peronne);
   }
 }

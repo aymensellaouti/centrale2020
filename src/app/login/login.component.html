@@ -1,15 +1,21 @@
 <form #loginForm="ngForm">
   Email :
   <input
+    #emailControl="ngModel"
     ngModel
     name="email"
     type="text"
     email
     required
     class="form-control">
-
+<div
+  *ngIf="!emailControl.valid&& emailControl.touched"
+  class="alert alert-danger">
+  Veuillez renseigner un email Valide.
+</div>
   Password :
   <input
+    #pwdControl="ngModel"
     type="password"
     ngModel
     required
@@ -17,7 +23,13 @@
     name="password"
     class="form-control"
   >
+  <div
+    *ngIf="!pwdControl.valid&& pwdControl.touched"
+    class="alert alert-danger">
+    La taille du passeword doit être d'au moins 4 caractères.
+  </div>
   <button
+    [disabled]="loginForm.invalid"
     (click)="login(loginForm)"
     class="btn btn-primary">
     Login

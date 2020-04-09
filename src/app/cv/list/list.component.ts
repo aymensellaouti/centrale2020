@@ -12,14 +12,14 @@ export class ListComponent implements OnInit {
   constructor(
     private cvService: CvService
   ) { }
-  @Output() selectPersonne = new EventEmitter();
+  // @Output() selectPersonne = new EventEmitter();
   ngOnInit() {
     /*
     Liste des personnes
      */
     this.personnes = this.cvService.getPersonnes();
   }
-  forwardPersonne(personne: Personne) {
-    this.selectPersonne.emit(personne);
-  }
+  // forwardPersonne(personne: Personne) {
+  //   this.selectPersonne.emit(personne);
+  // }
 }

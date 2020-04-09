@@ -30,6 +30,7 @@ import { FrontComponent } from './front/front.component';
 import { AdminComponent } from './admin/admin.component';
 import { NF404Component } from './nf404/nf404.component';
 import { LoginComponent } from './login/login.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { LoginComponent } from './login/login.component';
     FrontComponent,
     AdminComponent,
     NF404Component,
-    LoginComponent
+    LoginComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
