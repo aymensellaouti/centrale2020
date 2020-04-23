@@ -34,4 +34,7 @@
     class="btn btn-primary">
     Login
   </button>
+  <div class="alert alert-danger" *ngIf="errorMessage.length">
+    {{errorMessage}}
+  </div>
 </form>

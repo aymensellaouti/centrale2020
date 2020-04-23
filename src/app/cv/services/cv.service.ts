@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Personne} from '../../Models/personne';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import APIS from '../../Globals';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class CvService {
   personnes: Personne[];
   personneClickSubject = new Subject<Personne>();
   constructor(
+    private http: HttpClient
   ) {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 37,
@@ -22,13 +25,19 @@ export class CvService {
         '      '),
     ];
   }
-  getPersonnes(): Personne[] {
+  getFakePersonnes(): Personne[] {
     return this.personnes;
   }
-  getPersonneById(id): Personne {
+  getPersonnes(): Observable<Personne[]> {
+    return this.http.get<Personne[]>(APIS.apiPersonne);
+  }
+  getFakePersonneById(id): Personne {
     return this.personnes.find((personne) => personne.id === +id);
   }
-  deletePersonne(personne: Personne) {
+  getPersonneById(id): Observable<Personne> {
+    return this.http.get<Personne>(APIS.apiPersonne + id);
+  }
+  deleteFakePersonne(personne: Personne) {
     const index = this.personnes.indexOf(personne);
     if (index === -1) {
       return 0;
@@ -36,6 +45,12 @@ export class CvService {
       this.personnes.splice(index, 1);
       return 1;
     }
+  }
+  deletePersonne(id) {
+    const token = localStorage.getItem('token');
+    // const params = new HttpParams().set('access_token', token);
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.delete<any>(APIS.apiPersonne + id, {headers});
   }
   selectPersonne(peronne: Personne) {
     console.log('je vais dispatcher une personne :', peronne);

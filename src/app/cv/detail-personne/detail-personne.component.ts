@@ -19,12 +19,10 @@ export class DetailPersonneComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (parametre) => {
-        const personne = this.cvService.getPersonneById(parametre.id);
-        if (personne) {
-          this.personne = personne;
-        } else {
-          this.router.navigate(['cv']);
-        }
+        this.cvService.getPersonneById(parametre.id).subscribe(
+          (personne) => this.personne = personne,
+          (error) => this.router.navigate(['cv'])
+        );
       }
     );
     this.activatedRoute.queryParams.subscribe(
@@ -33,10 +31,12 @@ export class DetailPersonneComponent implements OnInit {
   }
 
   delete() {
-    if (this.cvService.deletePersonne(this.personne)) {
-      this.router.navigate(['cv']);
-    } else {
-      alert('Problème supression');
-    }
+    this.cvService.deletePersonne(this.personne.id).subscribe(
+      (response) => {
+        console.log(response);
+        this.router.navigate(['cv']);
+      },
+      (erreur) => console.log(erreur)
+    );
   }
 }

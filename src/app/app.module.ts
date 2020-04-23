@@ -31,6 +31,8 @@ import { AdminComponent } from './admin/admin.component';
 import { NF404Component } from './nf404/nf404.component';
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -61,12 +63,14 @@ import { ObservableComponent } from './observable/observable.component';
     AdminComponent,
     NF404Component,
     LoginComponent,
-    ObservableComponent
+    ObservableComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

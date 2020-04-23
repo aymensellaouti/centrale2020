@@ -17,7 +17,13 @@ export class ListComponent implements OnInit {
     /*
     Liste des personnes
      */
-    this.personnes = this.cvService.getPersonnes();
+     this.cvService.getPersonnes().subscribe(
+       (personnes) => this.personnes = personnes,
+       (error) => {
+         this.personnes = this.cvService.getFakePersonnes();
+         alert('Problème de connexion, les données sont Fake');
+       }
+     );
   }
   // forwardPersonne(personne: Personne) {
   //   this.selectPersonne.emit(personne);
