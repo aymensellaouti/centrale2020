@@ -7,7 +7,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link"
            routerLinkActive="active"
@@ -24,11 +24,27 @@
            routerLinkActive="active"
            [routerLink]="['todo']">Todo</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item " *ngIf="authService.isAuthenticated()">
         <a class="nav-link"
            routerLinkActive="active"
+           [routerLink]="['cv/new']">Add Personne</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar">
+      <li *ngIf="!authService.isAuthenticated()" class="nav-item">
+        <a
+           class="btn btn-outline-info"
            [routerLink]="['login']">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAuthenticated()">
+        <a
+          class="btn btn-outline-danger"
+          [ngStyle]="{cursor: 'pointer'}"
+          (click)="logout()"
+        >Logout</a>
       </li>
     </ul>
   </div>
 </nav>
+
+

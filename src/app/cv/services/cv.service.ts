@@ -47,13 +47,18 @@ export class CvService {
     }
   }
   deletePersonne(id) {
-    const token = localStorage.getItem('token');
-    // const params = new HttpParams().set('access_token', token);
-    const headers = new HttpHeaders().set('Authorization', token);
-    return this.http.delete<any>(APIS.apiPersonne + id, {headers});
+    // const token = localStorage.getItem('token');
+    // // const params = new HttpParams().set('access_token', token);
+    // const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.delete<any>(APIS.apiPersonne + id);
   }
   selectPersonne(peronne: Personne) {
     console.log('je vais dispatcher une personne :', peronne);
     this.personneClickSubject.next(peronne);
+  }
+  addPersonne(personne: Personne) {
+    // const token = localStorage.getItem('token');
+    // const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.post(APIS.apiPersonne, personne);
   }
 }

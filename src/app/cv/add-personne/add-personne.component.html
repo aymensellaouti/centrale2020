@@ -1,0 +1,17 @@
+<form #addForm="ngForm">
+  <label for="name">Name</label>
+  <input ngModel id="name" name="name" type="text" class="form-control">
+  <label for="firstname">Firstname</label>
+  <input ngModel id="firstname" name="firstname" type="text" class="form-control">
+  <label for="name">Age</label>
+  <input ngModel id="age" name="age" type="text" class="form-control">
+  <label for="job">Job</label>
+  <input ngModel id="job" name="job" type="text" class="form-control">
+  <label for="path">Path</label>
+  <input ngModel id="path" name="path" type="text" class="form-control">
+  <label for="cin">Cin</label>
+  <input ngModel id="cin" name="cin" type="text" class="form-control">
+  <button class="btn btn-primary mt-2" (click)="addPersonne(addForm)">
+    Add Personne
+  </button>
+</form>
