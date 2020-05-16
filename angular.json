@@ -118,8 +118,13 @@
               "devServerTarget": "centrale2020:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "centrale2020"
 }

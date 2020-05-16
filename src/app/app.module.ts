@@ -35,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpComponent } from './components/http/http.component';
 import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 import {LoginInterceptorProvider} from './interceptors/loginInterceptor';
+import { TaskManagerComponent } from './components/task-manager/task-manager.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {LoginInterceptorProvider} from './interceptors/loginInterceptor';
     LoginComponent,
     ObservableComponent,
     HttpComponent,
-    AddPersonneComponent
+    AddPersonneComponent,
+    TaskManagerComponent
   ],
   imports: [
     BrowserModule,

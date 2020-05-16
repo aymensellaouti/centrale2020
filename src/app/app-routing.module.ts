@@ -10,6 +10,7 @@ import {NF404Component} from './components/nf404/nf404.component';
 import {LoginComponent} from './components/login/login.component';
 import {AddPersonneComponent} from './cv/add-personne/add-personne.component';
 import {AuthGuard} from './guard/auth.guard';
+import {TaskManagerComponent} from './components/task-manager/task-manager.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'todo', component: TodoComponent},
   {path: 'color/:couleur', component: ColorComponent},
+  {path: 'taches', component: TaskManagerComponent},
   {path: '**', component: NF404Component},
 ];
 
